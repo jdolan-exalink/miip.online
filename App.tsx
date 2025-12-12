@@ -1,55 +1,70 @@
 
 import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-
-window._debugLogs = window._debugLogs || [];
-
-console.log('[APP] App.tsx module loading...');
-window._debugLogs.push({time: new Date().toISOString(), msg: 'App.tsx: Module loading'});
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import Tutorials from './pages/Tutorials';
+import TutorialDetail from './pages/TutorialDetail';
+import Contact from './pages/Contact';
+import Privacy from './pages/legal/Privacy';
+import Terms from './pages/legal/Terms';
+import Cookies from './pages/legal/Cookies';
+import MyIP from './components/tools/MyIP';
+import SubnetCalculator from './components/tools/SubnetCalculator';
+import RJ45Visualizer from './components/tools/RJ45Visualizer';
+import DnsLookup from './components/tools/DnsLookup';
+import PortChecker from './components/tools/PortChecker';
+import PasswordGenerator from './components/tools/PasswordGenerator';
+import { LanguageProvider } from './context/LanguageContext';
+import GoogleAnalytics from './components/GoogleAnalytics';
+import { logVisit } from './utils/analyticsBackend';
 
 // Wrapper to handle Side Effects (Scroll Top + Analytics)
 const RouteObserver = () => {
-  console.log('[ROUTER] RouteObserver component mounted');
-  window._debugLogs.push({time: new Date().toISOString(), msg: 'RouteObserver: Mounted'});
-  
   const location = useLocation();
-  console.log('[ROUTER] Route changed to:', location.pathname);
-  window._debugLogs.push({time: new Date().toISOString(), msg: 'Route: ' + location.pathname});
   
   useEffect(() => {
+    // 1. Scroll to top
     window.scrollTo(0, 0);
-    console.log('[ROUTER] Scrolled to top for route:', location.pathname);
+
+    // 2. Log visit to Custom Backend
+    logVisit(location.pathname);
+    
   }, [location]);
 
   return null;
 };
 
 const App: React.FC = () => {
-  console.log('[APP] App component is rendering...');
-  window._debugLogs.push({time: new Date().toISOString(), msg: 'App.tsx: Rendering'});
   
   return (
-    <Router>
-      <RouteObserver />
-      <div style={{ 
-        padding: '20px', 
-        fontFamily: 'sans-serif',
-        backgroundColor: '#f5f5f5',
-        minHeight: '100vh'
-      }}>
-        <h1 style={{color: '#333'}}>✅ React is Working!</h1>
-        <p style={{color: '#666'}}>App component rendered successfully.</p>
-        <p style={{color: '#666', fontSize: '12px'}}>
-          If you see this message, the basic app is working.
-        </p>
-        <details style={{marginTop: '20px', padding: '10px', backgroundColor: '#fff', border: '1px solid #ddd'}}>
-          <summary style={{cursor: 'pointer', fontWeight: 'bold'}}>📋 Debug Logs</summary>
-          <pre style={{fontSize: '11px', maxHeight: '300px', overflow: 'auto', marginTop: '10px'}}>
-            {JSON.stringify(window._debugLogs || [], null, 2)}
-          </pre>
-        </details>
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <RouteObserver />
+        <GoogleAnalytics />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/tutorials" element={<Tutorials />} />
+            <Route path="/tutorials/:id" element={<TutorialDetail />} />
+            <Route path="/contact" element={<Contact />} />
+            
+            {/* Legal Routes */}
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/cookies" element={<Cookies />} />
+            
+            {/* Tools Routes */}
+            <Route path="/tools/my-ip" element={<MyIP />} />
+            <Route path="/tools/subnet" element={<SubnetCalculator />} />
+            <Route path="/tools/rj45" element={<RJ45Visualizer />} />
+            <Route path="/tools/dns" element={<DnsLookup />} />
+            <Route path="/tools/port" element={<PortChecker />} />
+            <Route path="/tools/password" element={<PasswordGenerator />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </LanguageProvider>
   );
 };
 

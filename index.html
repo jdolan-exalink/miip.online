@@ -21,39 +21,7 @@
     </style>
   </head>
   <body class="bg-gray-50 text-gray-900 dark:bg-dark-950 dark:text-gray-100 transition-colors duration-200">
-    <!-- Debug logs before root -->
-    <script>
-      console.log('[EARLY] 1. HTML body loaded');
-      window._debugLogs = window._debugLogs || [];
-      window._debugLogs.push({time: new Date().toISOString(), msg: 'Body element loaded'});
-    </script>
-
-    <!-- React root element -->
     <div id="root"></div>
-
-    <!-- Verify root exists -->
-    <script>
-      const root = document.getElementById('root');
-      console.log('[EARLY] 2. Root element status:', root ? '✅ EXISTS' : '❌ MISSING');
-      window._debugLogs.push({time: new Date().toISOString(), msg: 'Root element ' + (root ? 'found' : 'NOT FOUND')});
-    </script>
-
-    <!-- Load React app -->
     <script type="module" src="/index.tsx"></script>
-
-    <!-- Timeout detection -->
-    <script>
-      setTimeout(() => {
-        if (!window._appInitialized) {
-          console.error('[TIMEOUT] App initialization timeout. Logs:', window._debugLogs);
-          const errorHtml = '<div style="padding:20px;color:#d32f2f;background:#ffebee;font-family:monospace;margin:20px"><h2>❌ App Failed to Load</h2><details><summary>Debug Info</summary><pre style="font-size:11px;overflow:auto;max-height:400px">' + JSON.stringify(window._debugLogs, null, 2) + '</pre></details></div>';
-          if (document.getElementById('root')) {
-            document.getElementById('root').innerHTML = errorHtml;
-          } else {
-            document.body.innerHTML = errorHtml;
-          }
-        }
-      }, 5000);
-    </script>
   </body>
 </html>
