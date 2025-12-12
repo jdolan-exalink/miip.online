@@ -16,7 +16,6 @@ import DnsLookup from './components/tools/DnsLookup';
 import PortChecker from './components/tools/PortChecker';
 import PasswordGenerator from './components/tools/PasswordGenerator';
 import { LanguageProvider } from './context/LanguageContext';
-import GoogleAnalytics from './components/GoogleAnalytics';
 import SEOSchema from './components/SEOSchema';
 import { logVisit } from './utils/analyticsBackend';
 
@@ -43,7 +42,6 @@ const App: React.FC = () => {
       <Router>
         <SEOSchema />
         <RouteObserver />
-        <GoogleAnalytics />
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
