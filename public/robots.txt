@@ -1,0 +1,21 @@
+# MIIP.online Robots.txt
+# Allow all crawlers to index the site
+
+User-agent: *
+Allow: /
+Disallow: 
+
+# Specify sitemap location
+Sitemap: https://miip.online/sitemap.xml
+
+# Additional rules for specific crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Slurp
+Allow: /

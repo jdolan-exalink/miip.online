@@ -4,7 +4,7 @@
   "devCommand": "npm run dev",
   "routes": [
     {
-      "src": "^(?!/(ads\\.txt|favicon\\.svg|assets/)).*",
+      "src": "^(?!/(ads\\.txt|favicon\\.svg|sitemap\\.xml|robots\\.txt|assets/)).*",
       "dest": "/index.html"
     }
   ]
