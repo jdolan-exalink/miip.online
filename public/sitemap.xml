@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Home -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Home - Multiple Language Variants -->
   <url>
     <loc>https://miip.online/</loc>
     <lastmod>2025-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miip.online/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://miip.online/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://miip.online/" />
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://miip.online/" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://miip.online/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miip.online/" />
   </url>
 
-  <!-- Tools -->
+  <!-- Tools - Multiple Language Variants -->
   <url>
     <loc>https://miip.online/#/tools/my-ip</loc>
     <lastmod>2025-12-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miip.online/#/tools/my-ip" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://miip.online/#/tools/my-ip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://miip.online/#/tools/my-ip" />
   </url>
 
   <url>
@@ -21,6 +32,9 @@
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miip.online/#/tools/subnet" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://miip.online/#/tools/subnet" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://miip.online/#/tools/subnet" />
   </url>
 
   <url>
@@ -28,6 +42,9 @@
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miip.online/#/tools/rj45" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://miip.online/#/tools/rj45" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://miip.online/#/tools/rj45" />
   </url>
 
   <url>
@@ -35,6 +52,9 @@
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miip.online/#/tools/dns" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://miip.online/#/tools/dns" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://miip.online/#/tools/dns" />
   </url>
 
   <url>
@@ -42,6 +62,9 @@
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miip.online/#/tools/port" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://miip.online/#/tools/port" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://miip.online/#/tools/port" />
   </url>
 
   <url>
@@ -49,6 +72,9 @@
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miip.online/#/tools/password" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://miip.online/#/tools/password" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://miip.online/#/tools/password" />
   </url>
 
   <!-- Content -->
@@ -57,6 +83,9 @@
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miip.online/#/tutorials" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://miip.online/#/tutorials" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://miip.online/#/tutorials" />
   </url>
 
   <url>
@@ -64,6 +93,9 @@
     <lastmod>2025-12-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miip.online/#/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://miip.online/#/contact" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://miip.online/#/contact" />
   </url>
 
   <!-- Legal -->
@@ -72,6 +104,9 @@
     <lastmod>2025-12-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miip.online/#/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://miip.online/#/privacy" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://miip.online/#/privacy" />
   </url>
 
   <url>
@@ -79,6 +114,9 @@
     <lastmod>2025-12-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miip.online/#/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://miip.online/#/terms" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://miip.online/#/terms" />
   </url>
 
   <url>
@@ -86,5 +124,8 @@
     <lastmod>2025-12-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miip.online/#/cookies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://miip.online/#/cookies" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://miip.online/#/cookies" />
   </url>
 </urlset>

@@ -1,5 +1,36 @@
 export type Language = 'en' | 'es' | 'pt';
 
+// SEO Keywords by Language
+export const seoKeywords = {
+  en: [
+    'what is my ip', 'my public ip', 'ip address', 'public ip address',
+    'ip calculator', 'subnet calculator', 'cidr calculator',
+    'password generator', 'secure password', 'strong password',
+    'rj45 wiring', 'ethernet cable colors', 't568a t568b',
+    'dns lookup', 'dns query', 'dns checker',
+    'port checker', 'open port', 'port scanner',
+    'networking tools', 'network utilities', 'online tools'
+  ],
+  es: [
+    'cuál es mi ip', 'mi ip pública', 'dirección ip', 'ip pública',
+    'calculadora ip', 'calculadora de subnets', 'calculadora cidr',
+    'generador de contraseñas', 'contraseña segura', 'contraseña fuerte',
+    'cable rj45', 'colores ethernet', 't568a t568b',
+    'búsqueda dns', 'consulta dns', 'verificador dns',
+    'probador de puertos', 'puerto abierto', 'escaneador puertos',
+    'herramientas de red', 'utilidades de networking', 'herramientas online'
+  ],
+  pt: [
+    'qual é meu ip', 'meu ip público', 'endereço ip', 'ip público',
+    'calculadora ip', 'calculadora de sub-redes', 'calculadora cidr',
+    'gerador de senhas', 'senha segura', 'senha forte',
+    'cabo rj45', 'cores ethernet', 't568a t568b',
+    'consulta dns', 'busca dns', 'verificador dns',
+    'verificador de portas', 'porta aberta', 'scanner de portas',
+    'ferramentas de rede', 'utilitários de rede', 'ferramentas online'
+  ]
+};
+
 export const translations = {
   en: {
     nav: {
