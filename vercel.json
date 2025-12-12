@@ -8,14 +8,21 @@
   "routes": [
     {
       "src": "/ads.txt",
-      "dest": "/ads.txt"
+      "dest": "/ads.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8"
+      }
     },
     {
       "src": "/favicon.svg",
       "dest": "/favicon.svg"
     },
     {
-      "src": "^/(?!assets).*",
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
       "dest": "/index.html"
     }
   ]
