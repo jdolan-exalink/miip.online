@@ -10,6 +10,9 @@ export default defineConfig(({ mode }) => {
         host: '0.0.0.0',
       },
       plugins: [react()],
+      define: {
+        'process.env.VITE_GA_MEASUREMENT_ID': JSON.stringify(env.VITE_GA_MEASUREMENT_ID)
+      },
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),

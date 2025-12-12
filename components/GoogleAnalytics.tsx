@@ -1,13 +1,19 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-// Replace with your actual Measurement ID
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; 
+// Get GA Measurement ID from environment variable
+const GA_MEASUREMENT_ID = process.env.VITE_GA_MEASUREMENT_ID || '';
 
 const GoogleAnalytics: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Only initialize if GA_MEASUREMENT_ID is set
+    if (!GA_MEASUREMENT_ID) {
+      console.warn('[GA4] GA_MEASUREMENT_ID not configured');
+      return;
+    }
+
     // 1. Initialize dataLayer if it doesn't exist
     window.dataLayer = window.dataLayer || [];
     function gtag(...args: any[]) {
