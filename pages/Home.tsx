@@ -133,45 +133,45 @@ const Home: React.FC = () => {
         {/* About Section */}
         <div className="space-y-4">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-            Herramientas de Networking Online - Cuál es mi IP
+            {t.seo.mainHeading}
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            En <strong>MIIP</strong>, ofrecemos una colección completa de herramientas online gratis para profesionales de IT, estudiantes y usuarios que necesitan soluciones rápidas y confiables de networking.
+            {t.seo.aboutIntro}
           </p>
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-            ¿Quieres saber cuál es tu IP pública? Nuestro servicio te muestra tu dirección IP al instante, junto con información sobre tu ubicación geográfica, proveedor de internet (ISP) y más. Todo sin necesidad de registrarte, completamente gratis y seguro.
+            {t.seo.aboutDesc}
           </p>
         </div>
 
         {/* Benefits Section */}
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-            Por qué usar MIIP
+            {t.seo.whyMiip}
           </h3>
           <ul className="space-y-3">
             <li className="flex gap-3 text-gray-700 dark:text-gray-300">
               <span className="text-primary-600 font-bold mt-1">✓</span>
-              <span><strong>Herramientas gratuitas sin límites:</strong> Acceso ilimitado a todas nuestras utilidades sin costo</span>
+              <span><strong>{t.seo.benefit1Title}</strong> {t.seo.benefit1Desc}</span>
             </li>
             <li className="flex gap-3 text-gray-700 dark:text-gray-300">
               <span className="text-primary-600 font-bold mt-1">✓</span>
-              <span><strong>Información inmediata:</strong> Obtén tu IP pública en milisegundos con detalles completos</span>
+              <span><strong>{t.seo.benefit2Title}</strong> {t.seo.benefit2Desc}</span>
             </li>
             <li className="flex gap-3 text-gray-700 dark:text-gray-300">
               <span className="text-primary-600 font-bold mt-1">✓</span>
-              <span><strong>Calculadora IP profesional:</strong> Calcula subnets, CIDR, máscaras y rangos con precisión</span>
+              <span><strong>{t.seo.benefit3Title}</strong> {t.seo.benefit3Desc}</span>
             </li>
             <li className="flex gap-3 text-gray-700 dark:text-gray-300">
               <span className="text-primary-600 font-bold mt-1">✓</span>
-              <span><strong>Generador de contraseñas seguras:</strong> Crea passwords fuertes y aleatorias con un click</span>
+              <span><strong>{t.seo.benefit4Title}</strong> {t.seo.benefit4Desc}</span>
             </li>
             <li className="flex gap-3 text-gray-700 dark:text-gray-300">
               <span className="text-primary-600 font-bold mt-1">✓</span>
-              <span><strong>Guía RJ45 interactiva:</strong> Aprende los colores de cables T568A y T568B con visualización en vivo</span>
+              <span><strong>{t.seo.benefit5Title}</strong> {t.seo.benefit5Desc}</span>
             </li>
             <li className="flex gap-3 text-gray-700 dark:text-gray-300">
               <span className="text-primary-600 font-bold mt-1">✓</span>
-              <span><strong>Privacidad garantizada:</strong> No almacenamos datos personales, todo ocurre en tu navegador</span>
+              <span><strong>{t.seo.benefit6Title}</strong> {t.seo.benefit6Desc}</span>
             </li>
           </ul>
         </div>
@@ -179,49 +179,49 @@ const Home: React.FC = () => {
         {/* Tools Overview */}
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-            Nuestras Herramientas de Networking
+            {t.seo.toolsOverview}
           </h3>
           
           <div className="space-y-6">
             <div>
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Ver mi IP Pública</h4>
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{t.seo.myIpTitle}</h4>
               <p className="text-gray-600 dark:text-gray-400">
-                Descubre tu dirección IP pública al instante. Obtén información sobre tu ISP, ciudad, país, coordenadas geográficas y más. Perfecta para diagnosticar problemas de conexión, comprobar si tu IP está siendo bloqueada o simplemente entender tu infraestructura de red.
+                {t.seo.myIpDesc}
               </p>
             </div>
 
             <div>
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Calculadora IP / CIDR</h4>
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{t.seo.subnetTitle}</h4>
               <p className="text-gray-600 dark:text-gray-400">
-                Herramienta profesional para administradores de red. Calcula subnets, máscaras de red, direcciones de broadcast, cantidad de hosts disponibles y mucho más. Soporta notación CIDR (ej: 192.168.1.0/24) para un trabajo rápido y eficiente.
+                {t.seo.subnetDesc}
               </p>
             </div>
 
             <div>
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Generador de Contraseñas Seguras</h4>
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{t.seo.passwordTitle}</h4>
               <p className="text-gray-600 dark:text-gray-400">
-                Crea contraseñas criptográficamente seguras en segundos. Personaliza la longitud, incluye mayúsculas, minúsculas, números y símbolos. Ideal para proteger tus cuentas, servidores y aplicaciones contra accesos no autorizados.
+                {t.seo.passwordDesc}
               </p>
             </div>
 
             <div>
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Tabla de Colores RJ45 (T568A / T568B)</h4>
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{t.seo.rj45Title}</h4>
               <p className="text-gray-600 dark:text-gray-400">
-                Guía visual interactiva de los dos estándares de cableado Ethernet. Aprende cómo ordenar los colores correctamente: Blanco-Verde, Verde, Blanco-Naranja, Azul, Blanco-Azul, Naranja, Blanco-Marrón, Marrón. Indispensable para técnicos de cableado y profesionales de redes.
+                {t.seo.rj45Desc}
               </p>
             </div>
 
             <div>
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Consultas DNS</h4>
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{t.seo.dnsTitle}</h4>
               <p className="text-gray-600 dark:text-gray-400">
-                Realiza búsquedas DNS profundas de cualquier dominio. Obtén registros A, AAAA, MX, TXT, NS, CNAME y más. Útil para debugging de dominios, verificación de configuración de correo y diagnóstico de problemas de conectividad.
+                {t.seo.dnsDesc}
               </p>
             </div>
 
             <div>
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Verificador de Puertos</h4>
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{t.seo.portTitle}</h4>
               <p className="text-gray-600 dark:text-gray-400">
-                Comprueba si un puerto está abierto o cerrado en un servidor. Diagnóstico rápido para verificar firewalls, configuración de routers y servicios en ejecución. Esencial para administración de servidores y troubleshooting de conectividad.
+                {t.seo.portDesc}
               </p>
             </div>
           </div>
@@ -230,42 +230,42 @@ const Home: React.FC = () => {
         {/* FAQ Section */}
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-            Preguntas Frecuentes
+            {t.seo.faqHeading}
           </h3>
           
           <div className="space-y-4">
             <div className="bg-gray-50 dark:bg-dark-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800">
-              <h4 className="font-bold text-gray-900 dark:text-white mb-2">¿Cuál es la diferencia entre IP pública y privada?</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t.seo.faqQ1}</h4>
               <p className="text-gray-600 dark:text-gray-400">
-                Tu <strong>IP pública</strong> es la dirección asignada por tu proveedor de internet (ISP) y es visible en todo internet. Tu <strong>IP privada</strong> (como 192.168.1.x o 10.0.0.x) está restringida a tu red local y no es accesible desde internet. Puedes ver ambas en nuestra herramienta.
+                {t.seo.faqA1}
               </p>
             </div>
 
             <div className="bg-gray-50 dark:bg-dark-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800">
-              <h4 className="font-bold text-gray-900 dark:text-white mb-2">¿Cómo funciona la notación CIDR?</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t.seo.faqQ2}</h4>
               <p className="text-gray-600 dark:text-gray-400">
-                CIDR (Classless Inter-Domain Routing) es una forma compacta de expresar redes IP. Por ejemplo, 192.168.1.0/24 significa: dirección base 192.168.1.0 con una máscara de 24 bits (255.255.255.0). Nuestra calculadora convierte automáticamente entre CIDR y notación de máscara tradicional.
+                {t.seo.faqA2}
               </p>
             </div>
 
             <div className="bg-gray-50 dark:bg-dark-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800">
-              <h4 className="font-bold text-gray-900 dark:text-white mb-2">¿Qué hace que una contraseña sea segura?</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t.seo.faqQ3}</h4>
               <p className="text-gray-600 dark:text-gray-400">
-                Una buena contraseña debe tener: al menos 12-16 caracteres, mezcla de mayúsculas y minúsculas, números y símbolos especiales. Nuestro generador crea contraseñas criptográficamente aleatorias que son prácticamente imposibles de adivinar.
+                {t.seo.faqA3}
               </p>
             </div>
 
             <div className="bg-gray-50 dark:bg-dark-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800">
-              <h4 className="font-bold text-gray-900 dark:text-white mb-2">¿Cuándo usar T568A vs T568B?</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t.seo.faqQ4}</h4>
               <p className="text-gray-600 dark:text-gray-400">
-                Ambos estándares funcionan correctamente. Lo importante es ser consistente en todo tu instalación. T568A es más común en nuevas instalaciones. T568B se usa a menudo en instalaciones legacy. Nuestra guía interactiva te muestra ambos órdenes visualmente.
+                {t.seo.faqA4}
               </p>
             </div>
 
             <div className="bg-gray-50 dark:bg-dark-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800">
-              <h4 className="font-bold text-gray-900 dark:text-white mb-2">¿Es seguro usar herramientas online para obtener mi IP?</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t.seo.faqQ5}</h4>
               <p className="text-gray-600 dark:text-gray-400">
-                Sí. Tu IP pública es información que ya es visible en internet. No compartimos ni guardamos datos personales. Todos nuestros cálculos ocurren en tu navegador, sin enviar información a servidores externos (excepto la consulta de IP que es pública por naturaleza).
+                {t.seo.faqA5}
               </p>
             </div>
           </div>
@@ -274,16 +274,16 @@ const Home: React.FC = () => {
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 p-6 rounded-lg border border-primary-200 dark:border-primary-800 text-center">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-            ¿Necesitas más herramientas?
+            {t.seo.needMore}
           </h3>
           <p className="text-gray-600 dark:text-gray-400 mb-4">
-            Explora nuestra colección completa de utilidades de networking, diseñadas para profesionales de IT y entusiastas de seguridad informática.
+            {t.seo.needMoreDesc}
           </p>
           <Link 
             to="/tutorials"
             className="inline-flex items-center gap-2 px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors"
           >
-            Ver Tutoriales
+            {t.seo.viewTutorials}
             <ArrowRight size={18} />
           </Link>
         </div>

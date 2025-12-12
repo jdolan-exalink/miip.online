@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const SEOSchema: React.FC = () => {
+  const { language } = useLanguage();
+  const [locale, setLocale] = useState('es');
+
+  useEffect(() => {
+    setLocale(language);
+  }, [language]);
+
+  // Language-specific content
+  const schemas = {
+    en: {
+      title: 'MIIP - Networking Tools Online',
+      description: 'Free online networking tools: What is my IP, Subnet Calculator, Secure Password Generator, RJ45 Wiring Guide, DNS Lookup, Port Checker.',
+      org: 'MIIP'
+    },
+    es: {
+      title: 'MIIP - Herramientas de Networking Online',
+      description: 'Herramientas online gratis: Cuál es mi IP, Calculadora IP, Generador de Contraseñas, Guía RJ45, Búsqueda DNS, Probador de Puertos.',
+      org: 'MIIP'
+    },
+    pt: {
+      title: 'MIIP - Ferramentas de Rede Online',
+      description: 'Ferramentas de rede online grátis: Qual é meu IP, Calculadora IP, Gerador de Senhas, Guia RJ45, Consulta DNS, Verificador de Portas.',
+      org: 'MIIP'
+    }
+  };
+
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "MIIP - Herramientas de Networking",
-    "description": "Herramientas online gratis para networking: ver IP pública, calculadora IP CIDR, generador de contraseñas, colores RJ45",
+    "name": schemas[locale as keyof typeof schemas]?.title || schemas.en.title,
+    "description": schemas[locale as keyof typeof schemas]?.description || schemas.en.description,
     "url": "https://miip.online",
     "applicationCategory": "UtilityApplication",
     "offers": {
@@ -18,17 +45,57 @@ const SEOSchema: React.FC = () => {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
       "ratingCount": "150"
-    },
-    "potentialAction": [
+    }
+  };
+
+  const faqDataEn = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
       {
-        "@type": "SearchAction",
-        "target": "https://miip.online/tools/my-ip",
-        "query-input": "required name=search_term_string"
+        "@type": "Question",
+        "name": "What is my public IP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your public IP is the address that your internet service provider (ISP) assigns to your router. You can see it instantly using our My IP tool."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between public and private IP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your public IP is assigned by your ISP and visible on the internet. Your private IP is internal to your local network (ranges like 192.168.x.x, 10.0.0.x, 172.16-31.x.x) and not accessible from the internet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I use an IP CIDR calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter an IP address and subnet mask (e.g., 192.168.1.0/24) to get network information: range, broadcast, available hosts, etc."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does T568A and T568B mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "These are two different standards for organizing RJ45 cable colors. T568A: White-Green, Green, White-Orange, Blue, White-Blue, Orange, White-Brown, Brown. T568B reverses the orange and green colors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I generate a secure password?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good password should have at least 12 characters and include uppercase, lowercase, numbers and special symbols. Our generator creates random and secure passwords automatically."
+        }
       }
     ]
   };
 
-  const faqData = {
+  const faqDataEs = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
@@ -75,18 +142,68 @@ const SEOSchema: React.FC = () => {
     ]
   };
 
+  const faqDataPt = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qual é meu IP público?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seu IP público é o endereço que seu provedor de internet (ISP) atribui ao seu roteador. Você pode vê-lo instantaneamente usando nossa ferramenta My IP."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual é a diferença entre IP público e privado?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seu IP público é atribuído pelo seu ISP e visível na internet. Seu IP privado é interno à sua rede local (faixa 192.168.x.x, 10.0.0.x, 172.16-31.x.x) e não é acessível pela internet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como usar uma calculadora IP CIDR?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Digite um endereço IP e máscara de sub-rede (ex: 192.168.1.0/24) para obter informações de rede: intervalo, broadcast, hosts disponíveis, etc."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que significa T568A e T568B?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "São dois padrões diferentes para organizar as cores dos cabos RJ45. T568A: Branco-Verde, Verde, Branco-Laranja, Azul, Branco-Azul, Laranja, Branco-Marrom, Marrom. T568B inverte as cores laranja e verde."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como gerar uma senha segura?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Uma boa senha deve ter pelo menos 12 caracteres e incluir maiúsculas, minúsculas, números e símbolos especiais. Nosso gerador cria senhas aleatórias e seguras automaticamente."
+        }
+      }
+    ]
+  };
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "MIIP",
     "url": "https://miip.online",
-    "description": "Herramientas online gratis para profesionales de IT y usuarios que necesitan soluciones de networking",
+    "description": "Free online networking tools for IT professionals and users",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Support",
       "url": "https://miip.online/contact"
     }
   };
+
+  // Select FAQ based on language
+  const faqData = locale === 'es' ? faqDataEs : locale === 'pt' ? faqDataPt : faqDataEn;
 
   return (
     <>
