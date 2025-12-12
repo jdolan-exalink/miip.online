@@ -19,9 +19,12 @@ import { LanguageProvider } from './context/LanguageContext';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import { logVisit } from './utils/analyticsBackend';
 
+console.log('[DEBUG] App.tsx: Module loaded');
+
 // Wrapper to handle Side Effects (Scroll Top + Analytics)
 const RouteObserver = () => {
   const location = useLocation();
+  console.log('[DEBUG] RouteObserver: Current route:', location.pathname);
   
   useEffect(() => {
     // 1. Scroll to top
@@ -29,6 +32,7 @@ const RouteObserver = () => {
 
     // 2. Log visit to Custom Backend
     logVisit(location.pathname);
+    console.log('[DEBUG] RouteObserver: Analytics logged for:', location.pathname);
     
   }, [location]);
 
@@ -36,6 +40,8 @@ const RouteObserver = () => {
 };
 
 const App: React.FC = () => {
+  console.log('[DEBUG] App.tsx: App component rendering...');
+  
   return (
     <LanguageProvider>
       <Router>

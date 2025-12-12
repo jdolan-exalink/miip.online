@@ -9,8 +9,10 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  console.log('[DEBUG] Layout.tsx: Component rendering...');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  console.log('[DEBUG] Layout.tsx: Language context retrieved, current language:', language);
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('theme') === 'dark' || 
@@ -20,8 +22,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   });
 
   const location = useLocation();
+  console.log('[DEBUG] Layout.tsx: Current location:', location.pathname);
 
   useEffect(() => {
+    console.log('[DEBUG] Layout.tsx: useEffect for theme management running');
     if (isDark) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
@@ -32,14 +36,18 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   }, [isDark]);
 
   useEffect(() => {
+    console.log('[DEBUG] Layout.tsx: useEffect for menu closing on route change');
     setIsMenuOpen(false);
   }, [location]);
 
   const cycleLanguage = () => {
+    console.log('[DEBUG] Layout.tsx: Cycling language, current:', language);
     if (language === 'en') setLanguage('es');
     else if (language === 'es') setLanguage('pt');
     else setLanguage('en');
   };
+
+  console.log('[DEBUG] Layout.tsx: Rendering layout with children');
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-dark-950 transition-colors duration-300">
