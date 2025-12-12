@@ -7,40 +7,51 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
     <!-- Google Analytics (GA4) -->
-    <!-- Replace G-XXXXXXXXXX with your actual Measurement ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      // Initial config is handled in React component to support SPA routing
-      // gtag('config', 'G-XXXXXXXXXX'); 
     </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .font-mono { font-family: 'Fira Code', monospace; }
+    </style>
   </head>
   <body class="bg-gray-50 text-gray-900 dark:bg-dark-950 dark:text-gray-100 transition-colors duration-200">
+    <!-- Debug logs before root -->
     <script>
-      console.log('[EARLY] 1. HTML body loaded - checking root div...');
+      console.log('[EARLY] 1. HTML body loaded');
       window._debugLogs = window._debugLogs || [];
-      window._debugLogs.push({time: new Date().toISOString(), msg: 'HTML body element exists'});
+      window._debugLogs.push({time: new Date().toISOString(), msg: 'Body element loaded'});
     </script>
+
+    <!-- React root element -->
     <div id="root"></div>
+
+    <!-- Verify root exists -->
     <script>
       const root = document.getElementById('root');
-      console.log('[EARLY] 2. Root div status:', root ? 'EXISTS' : 'MISSING');
-      window._debugLogs.push({time: new Date().toISOString(), msg: 'Root div ' + (root ? 'exists' : 'MISSING!')});
+      console.log('[EARLY] 2. Root element status:', root ? '✅ EXISTS' : '❌ MISSING');
+      window._debugLogs.push({time: new Date().toISOString(), msg: 'Root element ' + (root ? 'found' : 'NOT FOUND')});
     </script>
+
+    <!-- Load React app -->
     <script type="module" src="/index.tsx"></script>
+
+    <!-- Timeout detection -->
     <script>
-      console.log('[EARLY] 3. Script module loaded');
-      window._debugLogs.push({time: new Date().toISOString(), msg: 'Script module tag added'});
-      // Display logs after 5 seconds if app didn't initialize
       setTimeout(() => {
         if (!window._appInitialized) {
-          console.error('[TIMEOUT] App did not initialize in 5 seconds. Debug logs:', window._debugLogs);
-          document.body.innerHTML += '<div style="padding:20px;color:red;background:#f0f0f0"><h2>❌ Application Failed to Load</h2><pre>' + JSON.stringify(window._debugLogs, null, 2) + '</pre></div>';
+          console.error('[TIMEOUT] App initialization timeout. Logs:', window._debugLogs);
+          const errorHtml = '<div style="padding:20px;color:#d32f2f;background:#ffebee;font-family:monospace;margin:20px"><h2>❌ App Failed to Load</h2><details><summary>Debug Info</summary><pre style="font-size:11px;overflow:auto;max-height:400px">' + JSON.stringify(window._debugLogs, null, 2) + '</pre></details></div>';
+          if (document.getElementById('root')) {
+            document.getElementById('root').innerHTML = errorHtml;
+          } else {
+            document.body.innerHTML = errorHtml;
+          }
         }
       }, 5000);
     </script>
