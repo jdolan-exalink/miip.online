@@ -17,6 +17,7 @@ import PortChecker from './components/tools/PortChecker';
 import PasswordGenerator from './components/tools/PasswordGenerator';
 import { LanguageProvider } from './context/LanguageContext';
 import GoogleAnalytics from './components/GoogleAnalytics';
+import SEOSchema from './components/SEOSchema';
 import { logVisit } from './utils/analyticsBackend';
 
 // Wrapper to handle Side Effects (Scroll Top + Analytics)
@@ -40,6 +41,7 @@ const App: React.FC = () => {
   return (
     <LanguageProvider>
       <Router>
+        <SEOSchema />
         <RouteObserver />
         <GoogleAnalytics />
         <Layout>
